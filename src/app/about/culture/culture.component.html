@@ -1,0 +1,10 @@
+<section id="enterpriseCulture" class="about-type" [ngClass]='classCss' >
+  <h3 class="heading">
+      <strong class="cn">{{article?.title}}</strong>
+      <strong class="en"> {{enTitle}}</strong>
+  </h3>
+    <div class="body">
+      <div  [innerHTML]="article?.content" ></div>
+
+  </div>
+</section>

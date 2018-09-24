@@ -1,0 +1,14 @@
+<div class="banner about-banner">
+  <img src="assets/images/about-banner.png" alt="关于美珀banner">
+</div>
+<main id="main" role="main" class="main">
+  <nav class="tab js-tab">
+      <a (click)='goTO("about-meablo")' title="企业简介">企业简介</a>
+      <a (click)='goTO("brand-story")' title="品牌故事">品牌故事</a>
+      <a (click)='goTO("enterprise-culture")' title="企业文化">企业文化</a>
+  </nav>
+
+  <mb-culture [article]='introduce' [enTitle]='"About Meablo"' [classCss]='"about-meablo"'></mb-culture>
+  <mb-culture [article]='story' [enTitle]='"Brand story"' [classCss]='"brand-story"'></mb-culture>
+  <mb-culture [article]='culture' [enTitle]='"Enterprise Culture"' [classCss]='"enterprise-culture"'></mb-culture>
+</main>

@@ -1,0 +1,1355 @@
+@charset "UTF-8";
+/*! lixinjie 20180811 https://github.com/xinjie-just/meipo.git */
+@import "variables";
+@import "reboot";
+@import "iconfont";
+
+/*===首页===*/
+body {
+  display: -ms-flex;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
+  .main {
+    -ms-flex: 1;
+    flex: 1;
+  }
+}
+/*头部，banner*/
+.header {
+  z-index: 1000;
+  position: relative;
+  .heading-wrapper {
+    z-index: 1001;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 120px;
+    background-color: transparent;
+    transition: all .6s ease 0s;
+    color: #fff;
+    &:hover,
+    &.scroll {
+      background: rgba(255, 255, 255, .9);
+      box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .3);
+      color: #000;
+      .header-logo {
+        background-image: url("../images/logo-black.png");
+      }
+      .phone {
+        color: #333;
+      }
+    }
+  }
+  /*&:not(.home-header) {
+    .heading-wrapper {
+      background-color: #050c23;
+      &:hover,
+      &.scroll {
+        background: rgba(255, 255, 255, .9);
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .3);
+        color: #000;
+        .header-logo {
+          background-image: url("../images/logo-black.png");
+        }
+        .phone {
+          color: #333;
+        }
+      }
+    }
+  }*/
+  .heading {
+    @include center-content(1200px);
+    height: 120px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    @extend %clearfix;
+    .header-logo {
+      float: left;
+      width: 326px;
+      height: inherit;
+      background: url("../images/logo-white.png") no-repeat center;
+      a {
+        display: block;
+      }
+    }
+    .phone-menu {
+      float: right;
+      width: calc(100% - 400px);
+      height: inherit;
+      padding-top: 40px;
+    }
+    .phone {
+      color: inherit;
+      font-size: 16px;
+      margin-bottom: 10px;
+      text-align: right;
+      padding-right: 18px;
+      a {
+        color: inherit;
+        margin-left: 10px;
+      }
+    }
+    .header-nav {
+      font-size: 0;
+      text-align: right;
+      a {
+        display: inline-block;
+        color: inherit;
+        font-size: 14px;
+        padding: 5px 18px;
+        &:hover,
+        &.active {
+          color: $main-color;
+        }
+      }
+    }
+  }
+}
+.banner {
+  img {
+    display: block;
+    max-width: 100%;
+    height: 240px;
+    object-fit: cover;
+    overflow: hidden;
+  }
+}
+.banner-carousel {
+  left: 50%;
+  transform: translateX(-50%);
+  .carousel-indicators {
+    li {
+      width: 30px;
+      height: 4px;
+      margin: 12px;
+      background-color: rgba(255, 255, 255, .3);
+      border: none;
+      border-radius: 11px;
+      &.active {
+        width: 30px;
+        height: 4px;
+        margin: 12px;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.home-main {
+  section {
+    @include wrapper-padding(60px, 60px);
+    > .heading {
+      @include center-content(1200px);
+      margin-bottom: 40px;
+      strong {
+        color: inherit;
+        display: block;
+        text-align: center;
+      }
+      .cn {
+        line-height: 36px;
+        font-family: "webfont", Arial, sans-serif;
+        font-weight: lighter;
+        font-size: 36px;
+        letter-spacing: 2px;
+        padding-left: 2px;
+        margin-bottom: 10px;
+      }
+      .en {
+        font-family: "webfont", Arial, sans-serif;
+        font-weight: lighter;
+        text-transform: uppercase;
+        font-size: 24px;
+        letter-spacing: 3px;
+        line-height: 24px;
+        padding-left: 3px;
+      }
+    }
+  }
+}
+/*走近美珀*/
+.home-about {
+  background-color: #f5f5f5;
+  @include wrapper-padding(60px, 80px);
+  .heading {
+    color: #000;
+  }
+  > .intro {
+    @include center-content(1200px);
+    $width: 530px;
+    $height: 356px;
+    padding: 0 20px 20px 20px;
+    height: $height + 40px;
+    margin-bottom: 100px;
+    @extend %clearfix;
+    figure {
+      float: left;
+      position: relative;
+      width: $width;
+      height: $height;
+      overflow: visible;
+      > img {
+        display: block;
+        width: $width;
+        height: $height;
+      }
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+        background-color: #d9dbe0;
+      }
+      &::before {
+        width: 20px;
+        height: 270px;
+      }
+      &::after {
+        width: 420px;
+        height: 20px;
+      }
+    }
+    .text {
+      float: right;
+      width: calc(100% - #{$width});
+      height: $height;
+      background-color: #fefefe;
+      padding: 20px 30px 30px 50px;
+      .heading {
+        position: relative;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 26px;
+        color: #000;
+        strong {
+          font-family: "webfont", Arial, sans-serif;
+          font-size: 18px;
+          font-weight: bolder;
+          line-height: 1.6;
+          text-transform: uppercase;
+          letter-spacing: 15px;
+          &::after {
+            content: "\A";
+            white-space: pre;
+          }
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100px;
+          height: 1px;
+          background-color: #505050;
+        }
+      }
+      p {
+        font-size: 16px;
+        color: $text-color;
+        line-height: 1.6;
+        margin-bottom: 30px;
+      }
+      .more {
+        display: table-cell;
+        padding: 10px 23px;
+        border: 1px solid;
+        text-transform: uppercase;
+        font-size: 14px;
+        color: #666;
+        text-align: center;
+        &:hover {
+          color: $main-color;
+        }
+      }
+    }
+  }
+  > .details {
+    @include center-content(1200px);
+    @extend %clearfix;
+    $size: 360px;
+    .info {
+      float: left;
+      width: calc((100% - #{$size}) / 2);
+      a {
+        position: relative;
+        display: block;
+        width: $size;
+        height: 100px;
+        line-height: 100px;
+        font-size: 22px;
+        background-repeat: no-repeat;
+        strong {
+          display: block;
+          height: inherit;
+          line-height: inherit;
+          color: #000;
+          font-size: 22px;
+          @extend %ellipsis;
+        }
+        p {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          display: none;
+          line-height: 1.6em;
+          max-height: 4.8em;
+          width: 260px;
+          font-size: 14px;
+          color: #333;
+        }
+        &:hover {
+          background-color: #dadbdc;
+          strong {
+            display: none;
+          }
+          p {
+            display: block;
+            @include line-clamp(3);
+          }
+        }
+      }
+    }
+    .info-left {
+      padding-right: 40px;
+      a {
+        background-position: right 10px center;
+        padding-right: 80px;
+        @for $i from 1 through 4 {
+          &:nth-of-type(#{$i}) {
+            background-image: url("../images/no0#{$i}.png");
+          }
+        }
+        strong {
+          text-align: right;
+        }
+        p {
+          margin-left: 30px;
+        }
+      }
+    }
+    > figure {
+      float: left;
+      width: $size;
+      height: $size;
+      img {
+        display: block;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+      }
+    }
+    .info-right {
+      padding-left: 40px;
+      a {
+        background-position: left 10px center;
+        padding-left: 80px;
+        @for $i from 1 through 4 {
+          &:nth-of-type(#{$i}) {
+            $j: $i + 4;
+            background-image: url("../images/no0#{$j}.png");
+          }
+        }
+        strong {
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+/*美珀产品中心*/
+.home-product {
+  @include wrapper-padding(80px, 80px);
+  .heading {
+    color: #333;
+  }
+  .product {
+    @extend %clearfix;
+    @include center-content(1200px);
+    .side-left {
+      float: left;
+      width: 240px;
+    }
+    .slogen {
+      width: 240px;
+      height: 180px;
+      background: #212d4e url("../images/product-slogen-bg.png") center no-repeat;
+      padding-top: 50px;
+      padding-left: 20px;
+      strong {
+        font-family: "webfont", Arial, sans-serif;
+        color: #fff;
+        &.en {
+          font-weight: bolder;
+          text-transform: capitalize;
+          font-size: 12px;
+          &.important {
+            font-size: 34px;
+            font-weight: bolder;
+            line-height: 1;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            letter-spacing: 6px;
+          }
+        }
+        &.cn {
+          font-size: 12px;
+          margin-bottom: 4px;
+          letter-spacing: 8px;
+        }
+        &::after {
+          content: "\A";
+          white-space: pre;
+        }
+      }
+    }
+    .product-nav {
+      margin-bottom: 30px;
+      a {
+        position: relative;
+        display: block;
+        width: inherit;
+        height: 68px;
+        line-height: 67px;
+        border-bottom: 1px solid #ccc;
+        font-size: 20px;
+        color: #333;
+        padding-left: 30px;
+        padding-right: 20px;
+        &:hover {
+          color: $main-color;
+        }
+        &::after {
+          content: ">";
+          position: absolute;
+          top: 50%;
+          right: 20px;
+          transform: translateY(-50%);
+          width: 20px;
+          height: 20px;
+          line-height: 18px;
+          text-align: center;
+          font-size: 14px;
+          color: inherit;
+          border: 1px solid;
+          border-radius: 50%;
+        }
+      }
+    }
+    .phone {
+      margin-bottom: 20px;
+      padding-left: 30px;
+      strong {
+        display: block;
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: normal;
+      }
+      a {
+        display: block;
+        font-size: 20px;
+        color: $main-color;
+      }
+    }
+    .more {
+      display: inline-block;
+      padding: 10px 23px;
+      margin-left: 30px;
+      border: 1px solid;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: #666;
+      text-align: center;
+      &:hover {
+        color: $main-color;
+      }
+    }
+    .product-list {
+      float: right;
+      width: 940px;
+      @extend %clearfix;
+      li {
+        $width: 300px;
+        $height: 240px;
+        width: $width;
+        height: $height;
+        float: left;
+        margin-right: 20px;
+        &:first-of-type {
+          width: 620px;
+          height: 500px;
+          img {
+            display: block;
+            width: 618px;
+            height: 418px;
+          }
+          strong {
+            display: block;
+            font-size: 18px;
+            color: #333;
+            margin-top: 20px;
+            margin-bottom: 8px;
+            padding-right: 30px;
+            padding-left: 30px;
+            @extend %ellipsis;
+          }
+          p {
+            font-size: 12px;
+            color: #666;
+            padding-right: 30px;
+            padding-left: 30px;
+            @extend %ellipsis;
+          }
+        }
+        &:nth-of-type(2),
+        &:nth-of-type(3),
+        &:nth-of-type(6){
+          margin-bottom: 20px;
+          margin-right: 0;
+        }
+        &:not(:first-of-type) {
+          img {
+            display: block;
+            width: $width - 2;
+            height: $height - 42;
+          }
+          strong {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            height: 40px;
+            line-height: 40px;
+            padding-right: 30px;
+            padding-left: 30px;
+            @extend %ellipsis;
+          }
+        }
+        a {
+          display: block;
+          position: relative;
+          width: inherit;
+          height: inherit;
+          background: #fafafa;
+          border: 1px solid #ccc;
+          overflow: hidden;
+          .info {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin-top: $height - 2;
+            display: block;
+            height: $height;
+            opacity: 0.8;
+            background: #33436a;
+            color: #fff;
+            padding: 30px;
+            transition: all 1.4s ease 0s;
+            strong {
+              font-size: 16px;
+              margin-bottom: 14px;
+              @extend %ellipsis;
+              color: inherit;
+              padding-right: 0;
+              padding-left: 0;
+            }
+            p {
+              font-size: 14px;
+              line-height: 1.6em;
+              max-height: calc(1.6em * 6);
+              color: inherit;
+              @include line-clamp(6);
+              white-space: normal;;
+            }
+          }
+          &:hover {
+            .info {
+              margin-top: -($height - 2);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*加盟支持*/
+.join-support {
+  width: 100%;
+  height: 470px;
+  background: #373b4b url("../images/join-bg.png") no-repeat center;
+  .list {
+    @include center-content(1200px);
+    text-align: center;
+    font-size: 0;
+    li {
+      display: inline-block;
+      width: 20%;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-align: center;
+      font-size: 16px;
+      color: #fff;
+      @extend %ellipsis;
+      &:nth-of-type(10) {
+        & ~ li {
+          display: none;
+        }
+      }
+      i {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 16px;
+        font-size: 3em;
+      }
+    }
+  }
+}
+
+/*体验店风采*/
+.store-image {
+  background-color: #f5f5f5;
+  .heading {
+    color: #000;
+  }
+  .store-image-carousel {
+    @include center-content(1200px);
+    .carousel-inner {
+      width: 1000px;
+      height: 420px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .carousel-control {
+      text-shadow: none;
+      background: none;
+      opacity: 1;
+      width: 100px;
+      height: 100px;
+      text-align: center;
+      line-height: 100px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #999;
+      border-radius: 100%;
+      span {
+        color: inherit;
+        font-size: 28px;
+      }
+      &:hover {
+        color: $main-color;
+      }
+      &.left {
+        background-image: none;
+      }
+      &.right {
+        background-image: none;
+      }
+    }
+  }
+}
+
+/*新闻咨询*/
+.home-news {
+  background-color: #fff;
+  .heading {
+    color: #333;
+  }
+  .list {
+    $width: 340px;
+    @include center-content(1200px);
+    @extend %clearfix;
+    .importance-news {
+      float: left;
+      width: $width;
+      img {
+        display: block;
+        width: $width;
+        height: 200px;
+        margin-bottom: 16px;
+      }
+      .heading {
+        display: block;
+        font-size: 16px;
+        line-height: 1.6;
+        font-weight: 500;
+        margin-bottom: 6px;
+        color: $text-color;
+        @extend %ellipsis;
+        &:hover {
+          color: $main-color;
+        }
+      }
+      p {
+        font-size: 14px;
+        color: $text-color;
+        @extend %ellipsis;
+      }
+    }
+    .normal-news {
+      float: right;
+      width: calc(100% - #{$width} - 40px);
+      @extend %clearfix;
+      li {
+        width: calc(50% - 20px);
+        float: left;
+        &:nth-of-type(2n + 1) {
+          margin-right: 40px;
+        }
+        &:not(:first-of-type):not(:nth-of-type(2)) {
+          margin-top: 30px;
+        }
+        time {
+          display: block;
+          font-size: 16px;
+          line-height: 1.2;
+          margin-bottom: 10px;
+        }
+        .heading {
+          display: block;
+          font-weight: 500;
+          font-size: 16px;
+          margin-bottom: 12px;
+          color: $text-color;
+          border-bottom: 1px solid #e5e5e5;
+          padding-bottom: 6px;
+          line-height: 1.7;
+          @extend %ellipsis;
+          &:hover {
+            color: $main-color;
+          }
+        }
+        p {
+          font-size: 14px;
+          color: #666;
+          line-height: 1.6em;
+          max-height: 3.2em;
+          @include line-clamp(2);
+        }
+      }
+    }
+  }
+  .more {
+    display: table;
+    margin: 40px auto 0;
+    padding: 10px 23px;
+    border: 1px solid;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #666;
+    text-align: center;
+    &:hover {
+      color: $main-color;
+    }
+  }
+}
+
+/*底部*/
+.footer {
+  @include wrapper-padding(60px, 60px);
+  background: rgba(42, 42, 42, 1) url("../images/copyright-bg.png") no-repeat center right 120px;
+  color: #fff;
+  text-align: center;
+  .footer-nav {
+    @include center-content(1200px);
+    $height: 54px;
+    @extend %clearfix;
+    margin-right: auto;
+    margin-left: auto;
+    height: $height + 1px;
+    line-height: $height;
+    border-bottom: 1px solid rgba(74, 74, 74, 1);
+    a {
+      display: block;
+      float: left;
+      position: relative;
+      padding-right: 40px;
+      padding-left: 40px;
+      font-size: 14px;
+      color: #fff;
+      &:hover,
+      &.active {
+        color: $main-color;
+      }
+      &:not(:last-of-type) {
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 18px;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  .intro {
+    @include center-content(1200px);
+    margin-top: 50px;
+    font-size: 0;
+    @extend %clearfix;
+    .footer-logo {
+      display: inline-block;
+      vertical-align: middle;
+      width: 192px;
+      height: 60px;
+      font-size: 14px;
+    }
+    .other-info {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 14px;
+      line-height: 1.5;
+      width: calc(100% - 220px - 200px);
+      padding-left: 150px;
+      text-align: left;
+      > div {
+        line-height: 1.5em;
+        &:not(:last-of-type) {
+          margin-bottom: 6px;
+        }
+      }
+      .contact {
+        strong {
+          font-weight: normal;
+          &:not(:last-of-type) {
+            margin-right: 10px;
+          }
+          a {
+            color: inherit;
+          }
+        }
+      }
+    }
+    .contact-way {
+      width: 200px;
+      text-align: right;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 14px;
+      @extend %clearfix;
+      a {
+        display: inline-block;
+        vertical-align: middle;
+        color: #fff;
+        &:not(:last-of-type) {
+          margin-right: 30px;
+        }
+        i {
+          font-size: 1.2em;
+          color: inherit;
+        }
+      }
+      .wechat {
+        position: relative;
+        .qrcode {
+          position: absolute;
+          display: none;
+          bottom: 22px;
+          right: 0;
+          background-color: #fff;
+          padding: 5px;
+          font-size: 14px;
+          img {
+            display: block;
+            width: 90px;
+            height: 90px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*回到顶部*/
+.to-top {
+  @include transition(0.6s);
+  display: none;
+  z-index: 9999;
+  position: fixed;
+  bottom: 400px;
+  left: 50%;
+  transform: translateX(600px);
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background-color: #000;
+  opacity: 0.4;
+  text-align: center;
+  &:hover {
+    background-color: $main-color;
+  }
+  i {
+    font-size: 26px;
+    color: #fff;
+  }
+}
+
+/*===联系我们===*/
+.main:not(.home-main) {
+  section {
+    $color: #f5f5f5;
+    background-color: $color;
+    @include wrapper-padding(60px, 60px);
+    > .heading {
+      position: relative;
+      display: table;
+      margin: 0 auto 40px;
+      padding: 0 60px 15px;
+      color: #333;
+      border-bottom: 1px solid #999;
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: calc(-3px);
+        left: 50%;
+        width: 6px;
+        height: 6px;
+        background-color: #999;
+        transform: translateX(-50%) rotate(45deg);
+        outline: 10px solid $color;
+      }
+      strong {
+        display: block;
+        text-align: center;
+      }
+      .cn {
+        color: #333;
+        line-height: .9;
+        font-family: "webfont", Arial, sans-serif;
+        font-weight: normal;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      .en {
+        color: #666;
+        font-family: "webfont", Arial, sans-serif;
+        font-weight: lighter;
+        text-transform: capitalize;
+        font-size: 14px;
+        line-height: 1;
+      }
+    }
+  }
+  .tab {
+    background-color: #fff;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 0;
+    a {
+      display: inline-block;
+      vertical-align: middle;
+      padding-right: 50px;
+      padding-left: 50px;
+      font-size: 16px;
+      color: #151515;
+      &:hover,
+      &.active {
+        color: $main-color;
+      }
+    }
+  }
+}
+.contact-us {
+  .body {
+    @include center-content(1200px);
+    @extend %clearfix;
+  }
+  .baidumap {
+    float: left;
+    width: 840px;
+    height: 300px;
+  }
+  .details {
+    float: right;
+    img {
+      display: block;
+      width: 320px;
+      height: 120px;
+      margin-bottom: 24px;
+    }
+    span {
+      display: block;
+      font-size: 14px;
+      color: $text-color;
+      line-height: 1.6em;
+      a {
+        color: inherit;
+      }
+      &:not(:last-of-type) {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+.news-classify {
+  .list {
+    @include center-content(1200px);
+    @extend %clearfix;
+    li {
+      float: left;
+      width: calc(33.33333333% - 40px);
+      margin-bottom: 60px;
+      &:nth-of-type(3n + 2) {
+        margin-right: 60px;
+        margin-left: 60px;
+      }
+      time {
+        font-size: 16px;
+        color: #999;
+        margin-bottom: 2px;
+      }
+      a {
+        @extend %ellipsis;
+        display: block;
+        color: #000;
+        font-size: 16px;
+        line-height: 2;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 15px;
+        &:hover {
+          color: $main-color;
+        }
+      }
+      p {
+        @include line-clamp(2);
+        font-size: 14px;
+        color: #666;
+        line-height: 1.5em;
+        max-height: 3em;
+      }
+    }
+  }
+}
+.pagination-wrapper {
+  text-align: center;
+}
+.main:not(.home-main) {
+  section {
+    & + section {
+      padding-top: 0;
+    }
+  }
+}
+
+/*===体验店风采===*/
+.experience-store {
+  .list {
+    @include center-content(1200px);
+    @extend %clearfix;
+    li {
+      float: left;
+      width: calc(33.33333333% - 16px);
+      margin-bottom: 43px;
+      &:nth-of-type(3n + 2) {
+        margin-right: 24px;
+        margin-left: 24px;
+      }
+      a {
+        @extend %ellipsis;
+        display: block;
+        color: $text-color;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        @include transition(0.6s);
+        &:hover {
+          color: $main-color;
+          border-color: $main-color;
+          img {
+            @include scale(1.1, 1.1);
+          }
+        }
+      }
+      figure {
+        width: 100%;
+        height: 230px;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          @include transition(0.6s);
+        }
+      }
+      strong {
+        display: block;
+        padding-right: 2em;
+        padding-left: 2em;
+        @extend %ellipsis;
+        height: 50px;
+        line-height: 50px;
+      }
+    }
+  }
+}
+
+/*===案例中心===*/
+.case {
+  .list {
+    @include center-content(1200px);
+    @extend %clearfix;
+    li {
+      float: left;
+      width: calc(33.33333333% - 16px);
+      margin-bottom: 40px;
+      &:nth-of-type(3n + 2) {
+        margin-right: 24px;
+        margin-left: 24px;
+      }
+      a {
+        @extend %ellipsis;
+        display: block;
+        color: $text-color;
+        font-size: 16px;
+        line-height: 1.3em;
+        @include transition(0.6s);
+        &:hover {
+          color: $main-color;
+          border-color: $main-color;
+          img {
+            @include scale(1.1, 1.1);
+          }
+          .series {
+            color: $main-color;
+          }
+        }
+      }
+      figure {
+        width: 100%;
+        height: 280px;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          @include transition(0.6s);
+        }
+      }
+      .case-info {
+        margin-top: 1em;
+        width: 100%;
+        white-space: normal;
+        .tag {
+          @include transition(0.6s);
+          &:not(:first-child) {
+            margin-left: 15px;
+            padding-left: 16px;
+            border-left: 1px solid;
+            font-weight: 500;
+          }
+        }
+      }
+      .series {
+        @extend %ellipsis;
+        display: block;
+        font-size: 14px;
+        margin-top: .8em;
+        color: #666;
+        font-weight: 400;
+        @include transition(0.6s);
+      }
+    }
+  }
+}
+
+/*===产品中心===*/
+.product-type {
+  .list {
+    @include center-content(1200px);
+    @extend %clearfix;
+    li {
+      float: left;
+      width: calc(25% - 12px);
+      margin-bottom: 30px;
+      &:nth-of-type(4n + 2) {
+        margin-right: 8px;
+        margin-left: 16px;
+      }
+      &:nth-of-type(4n + 3) {
+        margin-right: 16px;
+        margin-left: 8px;
+      }
+      a {
+        display: block;
+        color: $text-color;
+        font-size: 16px;
+        &:hover {
+          color: $main-color;
+          .series {
+            color: $main-color;
+          }
+        }
+      }
+      figure {
+        width: 100%;
+        height: 200px;
+        img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          @include transition(0.6s);
+        }
+      }
+      .series {
+        @extend %ellipsis;
+        display: block;
+        font-size: 16px;
+        margin-top: 1em;
+        color: $text-color;
+        font-weight: 400;
+        text-align: center;
+        padding-right: 1em;
+        padding-left: 1em;
+        @include transition(0.6s);
+      }
+    }
+  }
+}
+
+/*===关于美珀===*/
+.about-meablo {
+  .intro {
+    @include center-content(1200px);
+    $width: 530px;
+    $height: 356px;
+    padding: 0 20px 20px 20px;
+    height: $height + 40px;
+    @extend %clearfix;
+    figure {
+      float: left;
+      position: relative;
+      width: $width;
+      height: $height;
+      overflow: visible;
+      > img {
+        display: block;
+        width: $width;
+        height: $height;
+      }
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -20px;
+        left: -20px;
+        background-color: #d9dbe0;
+      }
+      &::before {
+        width: 20px;
+        height: 270px;
+      }
+      &::after {
+        width: 420px;
+        height: 20px;
+      }
+    }
+    .text {
+      float: right;
+      width: calc(100% - #{$width});
+      padding-left: 60px;
+      p {
+        font-size: 14px;
+        color: $text-color;
+        line-height: 2;
+        &:not(:last-of-type) {
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #cbcbcc;
+        }
+      }
+    }
+  }
+}
+.brand-story {
+  background-color: #fff;
+  .body {
+    @include center-content(1200px);
+  }
+  .text {
+    margin-bottom: 34px;
+    p {
+      font-size: 16px;
+      color: $text-color;
+      line-height: 2;
+      text-align: center;
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .intro {
+    @extend %clearfix;
+    > div {
+      width: 50%;
+      text-align: center;
+      float: left;
+      .subhead {
+        margin-bottom: 15px;
+        strong {
+          color: inherit;
+          display: block;
+          text-align: center;
+        }
+        .cn {
+          font-family: "webfont", Arial, sans-serif;
+          font-weight: 500;
+          font-size: 18px;
+          margin-bottom: 8px;
+        }
+        .en {
+          font-family: "webfont", Arial, sans-serif;
+          font-weight: lighter;
+          text-transform: uppercase;
+          font-size: 12px;
+        }
+      }
+      img {
+        display: inline-block;
+        width: 300px;
+        height: 200px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+    }
+  }
+}
+.enterprise-culture {
+  .body {
+    @include center-content(1200px);
+    @extend %clearfix;
+    margin-top: 60px;
+    .text {
+      float: left;
+      width: 440px;
+      min-height: 60px;
+      padding-top: 20px;
+      padding-left: 60px;
+      background: url("../images/comma.png") no-repeat top left;
+      li {
+        font-size: 14px;
+        line-height: 1.8;
+        color: #283356;
+        &:not(:last-of-type) {
+          margin-bottom: .8em;
+        }
+        span {
+          color: #151515;
+        }
+      }
+    }
+    > img {
+      float: right;
+      display: block;
+      width: 620px;
+      height: 280px;
+    }
+  }
+}
