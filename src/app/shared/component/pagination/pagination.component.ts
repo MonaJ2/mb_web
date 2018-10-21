@@ -19,6 +19,7 @@ export class PaginationComponent implements OnInit {
 
   @Input() totalPage: number;
   @Input() currentPage: number;
+  @Input() navigatepageNums: any;
   @Output() pageChange = new EventEmitter<number>();
 
   constructor() { }

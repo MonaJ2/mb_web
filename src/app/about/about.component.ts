@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../core/http.service';
+import { ContantService } from '../config/contant';
 
 @Component({
   templateUrl: './about.component.html'
@@ -9,7 +10,7 @@ export class AboutComponent implements OnInit {
   culture: any;
   story: any;
   introduce: any;
-  constructor(public http: HttpService) {
+  constructor(public http: HttpService, public contant: ContantService) {
 
   }
   ngOnInit() {
@@ -24,7 +25,7 @@ export class AboutComponent implements OnInit {
   getCulture(){
     this.http.request({
       method: 'GET',
-      url: 'http://192.168.1.4:8080/article/perpage?page=0&size=10&category=美珀文化&orderfield=createtime',
+      url: this.contant.serveiceUrl + 'article/perpage?page=0&size=10&category=美珀文化&orderfield=createtime',
     }).then(result => {
       if(result.status == 'success'){
         if(result.result.list.length>0){
@@ -41,7 +42,7 @@ export class AboutComponent implements OnInit {
   getBrandStory(){
     this.http.request({
       method: 'GET',
-      url: 'http://192.168.1.4:8080/article/perpage?page=0&size=10&category=品牌故事&orderfield=createtime',
+      url: this.contant.serveiceUrl + 'article/perpage?page=0&size=10&category=品牌故事&orderfield=createtime',
     }).then(result => {
       if(result.status == 'success'){
         if(result.result.list.length>0){
@@ -57,7 +58,7 @@ export class AboutComponent implements OnInit {
   getAboutMeablo(){
     this.http.request({
       method: 'GET',
-      url: 'http://192.168.1.4:8080/article/perpage?page=0&size=10&category=企业简介&orderfield=createtime',
+      url: this.contant.serveiceUrl + 'article/perpage?page=0&size=10&category=企业简介&orderfield=createtime',
     }).then(result => {
       if(result.status == 'success'){
         if(result.result.list.length>0){

@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Directive } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PaginationComponent } from './component/pagination/pagination.component';
 import { DebounceClickDirective } from './directive/debounce-click.directive';
@@ -16,6 +16,7 @@ import { BottomComponent } from './component/bottom/bottom.component';
      ErrorImgDirective,
      NavigationComponent,
      BottomComponent
+
     ],
   exports: [
     PaginationComponent,
@@ -23,5 +24,7 @@ import { BottomComponent } from './component/bottom/bottom.component';
      NavigationComponent,
      BottomComponent
     ]
+
+
 })
 export class SharedModule { }

@@ -12,56 +12,22 @@
           <strong class="en">Meablo News</strong>
       </h3>
       <ul class="list">
+        <ng-container *ngFor="let n of news.list">
           <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
+            <time>{{n.createTime | date: 'yyyy-MM-dd' }</time>
+            <h4><a href="#" title="{{n.title}}">{{n.title}}</a></h4>
+              <p>{{n.content}}</p>
           </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
+        </ng-container>
+
       </ul>
       <div class="pagination-wrapper">
           <ul class="pagination">
+              <hw-pagination [totalPage]="news?.pages" [(currentPage)]="newCurentPage"
+              [navigatepageNums]="news?.navigatepageNums"
+              (pageChange)="getNews($event)" ></hw-pagination>
               <!-- 当前页面时，给 li 添加 active 类 -->
-              <li>
+              <!-- <li>
                   <a href="#" aria-label="Previous">
                       <span aria-hidden="true">&laquo;</span>
                   </a>
@@ -75,7 +41,7 @@
                   <a href="#" aria-label="Next">
                       <span aria-hidden="true">&raquo;</span>
                   </a>
-              </li>
+              </li> -->
           </ul>
       </div>
   </section>
@@ -85,71 +51,19 @@
           <strong class="en">Industry News</strong>
       </h3>
       <ul class="list">
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
-          <li>
-              <time>2018-08-05</time>
-              <h4><a href="#" title="安装落地落地窗的优劣势">安装落地落地窗的优劣势</a></h4>
-              <p>你家也有安装落地玻璃窗吧，相信现在不少的房屋装修中都有选择这种玻璃窗的安装方式，但是你是</p>
-          </li>
+          <ng-container *ngFor="let trade of trades.list">
+              <li>
+                <time>{{trade.createTime | date: 'yyyy-MM-dd' }</time>
+                <h4><a href="#" title="{{trade.title}}">{{trade.title}}</a></h4>
+                  <p>{{trade.content}}</p>
+              </li>
+            </ng-container>
+
       </ul>
       <div class="pagination-wrapper">
-          <ul class="pagination">
-              <!-- 当前页面时，给 li 添加 active 类 -->
-              <li>
-                  <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                  </a>
-              </li>
-              <li class="active"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li>
-                  <a href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                  </a>
-              </li>
-          </ul>
+          <hw-pagination [totalPage]="trades?.pages" [(currentPage)]="tradeCurentPage"
+          [navigatepageNums]="trades?.navigatepageNums"
+          (pageChange)="getTrades($event)" ></hw-pagination>
       </div>
   </section>
 </main>

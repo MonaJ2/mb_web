@@ -98,12 +98,15 @@
                   <strong class="en">modern aesthetics</strong>
               </h2>
               <nav class="product-nav">
-                  <a href="#" title="平开窗">平开窗</a>
+                <ng-container *ngFor="let type of types">
+                    <a href="#/products" title="{{type.name}}">{{type.name}}</a>
+                </ng-container>
+                  <!-- <a href="#" title="平开窗">平开窗</a>
                   <a href="#" title="推拉窗">推拉窗</a>
                   <a href="#" title="推拉门">推拉门</a>
                   <a href="#" title="折叠门">折叠门</a>
                   <a href="#" title="折叠门">折叠门</a>
-                  <a href="#" title="折叠门">折叠门</a>
+                  <a href="#" title="折叠门">折叠门</a> -->
               </nav>
               <div class="phone">
                   <strong>加盟热线</strong>

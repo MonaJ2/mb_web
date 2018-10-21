@@ -18,23 +18,26 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
   <div class="intro">
       <img src="assets/images/footer-logo.png" alt="美珀门窗logo" class="footer-logo">
       <div class="other-info">
-          <div class="copyright">四川美珀门窗有限公司 Copyright &copy; 版权所有 备案号：蜀ICP备 1234567890号</div>
-          <div class="contact">
-              <strong>联系电话：<a href="tel:4006570567" title="给我们打电话" class="phone">400-657-0567</a></strong>
-              <strong>电子邮件：<a href="meilto:abcdefghijklmn@qq.com" title="通过电子邮件联系我们" class="email">abcdefghijklmn@qq.com</a></strong>
+      <div class="copyright">四川美珀门窗有限公司 Copyright &copy; 版权所有 备案号：蜀ICP备 1234567890号</div>
+      <div class="contact">
+          <strong>联系电话：
+              <a href="tel:4006570567" title="给我们打电话" class="phone">400-657-0567</a>
+              <a href="tel:08385586655" title="给我们打电话" class="phone">0838-5586655</a>
+          </strong>
+          <strong>传真号码：0838-5196533</strong>
+      </div>
+      <div class="address">公司地址：四川省广汉高新区台中路东段</div>
+  </div>
+  <div class="contact-way">
+      <a href="javascript: void(0)" title="扫描微信二维码" class="wechat">
+          <i class="iconfont icon-wechat js-wechat-icon"></i>
+          <div class="qrcode js-qrcode">
+              <img src="assets/images/weixin-code.jpg" alt="微信二维码">
           </div>
-          <div class="address">公司地址：四川省广汉市XXX街XXX号</div>
-      </div>
-      <div class="contact-way">
-          <a href="javascript: void(0)" title="扫描微信二维码" class="wechat">
-              <i class="iconfont icon-wechat js-wechat-icon"></i>
-              <div class="qrcode js-qrcode">
-                  <img src="assets/images/weixin-code.jpg" alt="微信二维码">
-              </div>
-          </a>
-          <a href="#" title="访问新浪微博" class="weibo"><i class="iconfont icon-weibo"></i></a>
-          <a href="#" title="通过QQ联系我们" class="qq"><i class="iconfont icon-qq"></i></a>
-      </div>
+      </a>
+      <a href="#" title="访问新浪微博" class="weibo"><i class="iconfont icon-weibo"></i></a>
+      <a href="#" title="通过QQ联系我们" class="qq"><i class="iconfont icon-qq"></i></a>
+  </div>
   </div>
   <!--回到顶部-->
   <a class="to-top js-to-top" (click)="goToTop()" title="回到顶部">

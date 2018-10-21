@@ -8,143 +8,28 @@
           <strong class="en">Case Center</strong>
       </h3>
       <ul class="list">
+          <ng-container *ngFor="let case of caseResult?.list">
           <li>
-              <a href="#" title="120阳光房系列">
+              <a href="#" title="{{case.title}}">
                   <figure>
-                      <img src="assets/images/case1.jpg" alt="案例中心展示">
+                      <img src="assets/images/{{case.icon}}" alt="{{case.title}}">
                   </figure>
                   <div class="case-info">
-                      <span class="tag address">成都</span>
-                      <span class="tag buildings">太古里</span>
-                      <time class="tag">2018.09.16</time>
+                      <span class="tag address">{{case.area}}"</span>
+                      <span class="tag buildings">{{case.address}}"</span>
+                      <time class="tag">{{case.createTime | date: 'yyyy-MM-dd' }}</time>
                   </div>
-                  <strong class="series">120阳光房系列</strong>
+                  <strong class="series">{{case.title}}</strong>
               </a>
           </li>
-          <li>
-              <a href="#" title="120阳光房系列">
-                  <figure>
-                      <img src="assets/images/case1.jpg" alt="案例中心展示">
-                  </figure>
-                  <div class="case-info">
-                      <span class="tag address">成都</span>
-                      <span class="tag buildings">太古里</span>
-                      <time class="tag">2018.09.16</time>
-                  </div>
-                  <strong class="series">120阳光房系列</strong>
-              </a>
-          </li>
-          <li>
-              <a href="#" title="120阳光房系列">
-                  <figure>
-                      <img src="assets/images/case1.jpg" alt="案例中心展示">
-                  </figure>
-                  <div class="case-info">
-                      <span class="tag address">成都</span>
-                      <span class="tag buildings">太古里</span>
-                      <time class="tag">2018.09.16</time>
-                  </div>
-                  <strong class="series">120阳光房系列</strong>
-              </a>
-          </li>
-          <li>
-              <a href="#" title="120阳光房系列">
-                  <figure>
-                      <img src="assets/images/case1.jpg" alt="案例中心展示">
-                  </figure>
-                  <div class="case-info">
-                      <span class="tag address">成都</span>
-                      <span class="tag buildings">太古里</span>
-                      <time class="tag">2018.09.16</time>
-                  </div>
-                  <strong class="series">120阳光房系列</strong>
-              </a>
-          </li>
-          <li>
-              <a href="#" title="120阳光房系列">
-                  <figure>
-                      <img src="assets/images/case1.jpg" alt="案例中心展示">
-                  </figure>
-                  <div class="case-info">
-                      <span class="tag address">成都</span>
-                      <span class="tag buildings">太古里</span>
-                      <time class="tag">2018.09.16</time>
-                  </div>
-                  <strong class="series">120阳光房系列</strong>
-              </a>
-          </li>
-          <li>
-              <a href="#" title="120阳光房系列">
-                  <figure>
-                      <img src="assets/images/case1.jpg" alt="案例中心展示">
-                  </figure>
-                  <div class="case-info">
-                      <span class="tag address">成都</span>
-                      <span class="tag buildings">太古里</span>
-                      <time class="tag">2018.09.16</time>
-                  </div>
-                  <strong class="series">120阳光房系列</strong>
-              </a>
-          </li>
-          <li>
-              <a href="#" title="120阳光房系列">
-                  <figure>
-                      <img src="assets/images/case1.jpg" alt="案例中心展示">
-                  </figure>
-                  <div class="case-info">
-                      <span class="tag address">成都</span>
-                      <span class="tag buildings">太古里</span>
-                      <time class="tag">2018.09.16</time>
-                  </div>
-                  <strong class="series">120阳光房系列</strong>
-              </a>
-          </li>
-          <li>
-              <a href="#" title="120阳光房系列">
-                  <figure>
-                      <img src="assets/images/case1.jpg" alt="案例中心展示">
-                  </figure>
-                  <div class="case-info">
-                      <span class="tag address">成都</span>
-                      <span class="tag buildings">太古里</span>
-                      <time class="tag">2018.09.16</time>
-                  </div>
-                  <strong class="series">120阳光房系列</strong>
-              </a>
-          </li>
-          <li>
-              <a href="#" title="120阳光房系列">
-                  <figure>
-                      <img src="assets/images/case1.jpg" alt="案例中心展示">
-                  </figure>
-                  <div class="case-info">
-                      <span class="tag address">成都</span>
-                      <span class="tag buildings">太古里</span>
-                      <time class="tag">2018.09.16</time>
-                  </div>
-                  <strong class="series">120阳光房系列</strong>
-              </a>
-          </li>
+        </ng-container>
+
       </ul>
       <div class="pagination-wrapper">
-          <ul class="pagination">
-              <!-- 当前页面时，给 li 添加 active 类 -->
-              <li>
-                  <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                  </a>
-              </li>
-              <li class="active"><a href="#">1</a></li>
-              <li><a href="#">2</a></li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-              <li>
-                  <a href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                  </a>
-              </li>
-          </ul>
+        <hw-pagination [totalPage]="caseResult?.pages" [(currentPage)]="currentPage"
+        [navigatepageNums]="caseResult?.navigatepageNums"
+        (pageChange)="queryCasePerPage($event)" ></hw-pagination>
+
       </div>
   </section>
 </main>

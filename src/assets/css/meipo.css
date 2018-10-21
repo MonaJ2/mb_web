@@ -1131,6 +1131,10 @@ body .main {
   left: 50%;
   transform: translateX(-50%);
 }
+.carousel-inner,.banner{
+  max-width: 1920px!important;
+  margin: auto!important;
+}
 .store-image .store-image-carousel .carousel-control {
   text-shadow: none;
   background: none;
